@@ -1,0 +1,634 @@
+body
+{
+  margin: auto;
+	font-size: 12px;
+	font-family: arial;
+	margin-top: 0px;
+	margin-left: 0px;
+	background: #e9edf3;
+  width: 1520px;
+}
+.login{
+	background: #eedbdb;
+	width: 1520px;
+	height: 30px;
+	display: flex;
+}
+.login > .login-icon1 > ul
+{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	padding-top: 3px;
+	margin-left: 150px;
+}
+.login > .login-icon1 > ul > li
+{
+	display: inline;
+	margin-right: 0px;
+}
+.login > .login-icon1 > ul > li > a
+{
+	font-size: 21px;
+	padding: 5px;
+}
+.login > .login-icon1 > ul > li > a:hover
+{
+	color: #a96a6a;
+
+}
+.login > .login-icon2 > ul
+{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	padding-top: 8px;
+	margin-left: 460px;
+}
+.login > .login-icon2 > ul > li
+{
+	display: inline;
+	margin-right: 50px;
+}
+.login a{
+	text-decoration: none;
+	color: black;
+}
+.login a:hover{
+	text-decoration: underline;
+	color: green;
+}
+.banner
+{
+	margin-top: 0px;
+	background: white;
+	width: 1520px;
+    height: 105px;
+    }
+ .banner > .logo
+ {
+ 	padding-top: 5px;
+ 	margin-left: 200px;
+ }
+ .box >.search{
+  overflow: hidden;
+  width: 500px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.banner > .box
+{
+	margin-left: 520px;
+	margin-top: -75px;
+}
+.box > .search input#search{
+  width: 500px;
+  height: 35px;
+  border: solid green;
+  background: white;
+  font-size: 13px;
+  float: left;
+  color: black;
+  padding-left: 15px;
+  border-radius: 5px;
+}
+.banner > .icon-search
+{
+margin-top: -35px;
+margin-left: 1025px;
+}
+button{
+	border: solid green;
+	background: green;
+	border-radius: 2px;
+}
+button > i{padding: 7px;}
+
+ .banner > .cart
+{
+margin-top: -33px;
+margin-left: 1170px;
+}
+ .banner > .cart >a
+ {
+ 	text-decoration: none;
+ 	color: black;
+ 	font-size: 15px;
+ 	font-family: times new roman;
+ 	padding: 5px;
+ }
+  .banner > .cart > a:hover
+  {
+  	color: #e86415;
+  }
+ .cart i{
+ 	vertical-align: middle;
+ }
+ .menu
+{
+	margin-top: 0px;
+	background: #1f4140;
+	width: 1520px;
+    height: 40px;
+ }
+ .menu > ul
+ {
+ 	margin: 0px;
+ 	padding: 0px;
+ 	list-style: none;
+ 	margin-left: 200px;
+ 	padding-top: 13px;
+ }
+ .menu > ul > li
+ {
+ 	display: inline;
+ 	border-right: 1px solid white;
+ }
+ .menu > ul > li:last-child
+ {
+ 		border-right-width:0px; 
+}
+ .menu > ul > li > a
+ {
+ 	padding: 15px;
+ 	text-decoration: none;
+ 	color: white;
+    font-size: 14px;
+    font-weight: bold;
+ }
+  .menu > ul > li > a:hover
+  {
+  	color: yellow;
+  }
+
+ .content
+ {
+ 	background: white;
+ 	height: 590px;
+ 	width: 1160px;
+ 	margin-top: 50px;
+ 	margin-left: 165px;
+ 	display: flex;
+ }
+
+ .content > .box{width: 460px; padding-top: 15px;
+ 	margin-left: 15px;}
+	.main > .thumbnail > img{width: 460px; border: 2px solid pink;}
+  .thumbnail {
+    overflow: hidden;
+}
+
+.thumbnail > img {
+    width: 100%;
+    height: 100%;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.thumbnail > img:hover {
+    transform: scale(1.6);
+}
+	.list-img ul{padding: 0px; margin: 0px; list-style: none; display: flex;}
+	.list-img ul li img{width: 78px;}
+	.list-img {margin-top: 10px;}
+	.list-img ul li{margin-right: 17px;}
+ .content > .chitietsp
+ {
+ 	padding-top: 25px;
+ 	margin-left: 50px;
+ }	
+ .chitietsp > .tensp
+ {
+ 	font-size: 22px;
+ }
+  .chitietsp > .giasp
+  {
+  	background: #fbfbfc;
+  	margin-left:0px;
+  	margin-top: 30px;
+  	height: 130px;
+  	width: 600px;
+  }
+  .giasp > .gia
+  {
+  	padding-top: 30px;
+  	margin-left: 50px;
+  }
+  .giasp > .gia > a
+  {
+  	color: #2e5b56;
+  	font-size: 17px;
+  	text-decoration: line-through;
+  }
+  .giasp > .gia > b
+  {
+  	margin-left: 20px;
+  	font-size: 25px;
+  	color: red;
+  	font-family: times new roman;
+  }
+  .giasp > .gia > span
+  {
+  	margin-left: 15px;
+  	background: red;
+  	padding: 3px 5px;
+  	color: white;
+  	border-radius: 3px;
+  }
+
+
+
+.chitietsp > .size
+ {
+  padding-top: 70px;
+ }
+  .chitietsp > .size > b
+  {
+  	font-size: 14px;
+  }
+    .chitietsp > .size > ul
+    {
+    	margin: 0px;
+    	padding: 0px;
+    	list-style: none;
+    	margin-left: 90px;
+    	margin-top: -26px;
+    }
+     .chitietsp > .size > ul >li
+     {
+     	display: inline-block;
+     	margin-right: 20px;
+     }
+      .chitietsp > .size > ul >li > button
+      {
+      	padding: 10px 20px;
+      	background: white;
+      	color: black;
+      	border: 1px solid pink;
+      	cursor: pointer;
+      }
+       .chitietsp > .size > ul >li > button:hover
+       {
+       	border: 1px solid green;
+       }
+
+ .chitietsp > .soluong
+ {
+  padding-top: 85px;
+  font-size: 15px;
+ }
+.is-form {
+    overflow:hidden;
+    position:relative;
+    background-color:#f9f9f9;
+    padding:8px 16px;
+    text-shadow:1px 1px 1px #fff;
+    border:1px solid pink;
+
+}
+.is-form.minus{
+  margin-left: 50px;
+}
+.is-form:focus,.input-text:focus {
+    outline:none;
+}
+.input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
+    -webkit-appearance:none;
+    margin:0;
+}
+  .chitietsp > .soluong  > .input-qty
+  {
+  	width: 35px;
+  	text-align: center;
+  	font-size: 14px;
+  	font-family: times new roman;
+  	height: 30px;
+  	border: 1px solid black;
+  	border-radius: 0px;
+    margin-left: -4.5px;
+    margin-right: -4.5px;
+  }
+  .chitietsp > .thanhtoan
+  {
+  	padding-top: 60px;
+    display: flex;
+    margin-left: 30px;
+  }
+  .thanhtoan > .them
+  {
+  	border: 1px solid green;
+  	background: #e9edf3;
+  	padding: 5px 10px;
+    cursor: pointer;
+  }
+   .thanhtoan > .them > i
+   {
+   	vertical-align: middle;
+   }
+    .thanhtoan > .mua
+  {
+  	margin-left: 30px;
+  	border: 1px solid green;
+  	background: green;
+  	padding: 8px 40px;
+  	font-weight: bold;
+  	color: white;
+    cursor: pointer;
+  }
+  .motasp
+  {
+  	background: white;
+  	margin-top: 40px;
+  	margin-left: 160px;
+  	width: 1160px;
+  	height: 160px;
+  }
+   .motasp > .mt1
+   {
+   	padding-top: 15px;
+   	margin-left: 50px;
+   	font-size: 22px;
+    font-family: times new roman;
+    font-weight: bold;
+   }
+   .motasp > hr
+   {
+   	width: 1000px;
+   	margin-left: 50px;
+   	background-color: pink;
+   }
+   .motasp > .mt2
+   {
+   	padding-top: 25px;
+   	font-size: 15px;
+   	font-family: times new roman;
+   	margin-left: 50px
+   }
+     .spkhac
+  {
+  	background: white;
+  	margin-top: 40px;
+  	margin-left: 160px;
+  	width: 1160px;
+  	height: 700px;
+  }
+    .spkhac > .gtsp
+   {
+   	padding-top: 15px;
+   	margin-left: 50px;
+   	font-size: 22px;
+    font-family: times new roman;
+    font-weight: bold;
+   }
+   .spkhac > hr
+   {
+   	width: 1000px;
+   	margin-left: 50px;
+   	background-color: pink;
+   	margin-top: 20px;
+   }
+   .spkhac > .content-giaynu
+{
+	margin-top: 25px;
+}
+.spkhac > .content-giaynu > ul
+{
+	margin:0px;
+	padding: 0px;
+	list-style: none;
+	margin-left: 40px;
+}
+.spkhac > .content-giaynu img{
+	width: 175px;
+	height: 175px;
+}
+.spkhac > .content-giaynu > ul >li
+{
+	display: inline-block;
+	border: 1px solid #7b3e4e;
+	padding: 10px;
+	margin-right: 13px;
+}
+.content-giaynu > ul > li .ten{
+	font-size: 12.5px;
+}
+.content-giaynu > ul > li .gia{
+	margin-left:20px;
+	color: green;
+	font-weight: bold;
+	font-size: 14px;
+	}
+.content-giaynu > ul > li .gia >b
+{
+	text-decoration: line-through;
+	color: black;
+	font-size: 12px;
+}
+.content-giaynu > ul > li .slban
+{
+	margin-left: 100px;
+	font-size: 11px;
+}
+.content-giaynu a
+{
+	text-decoration: none;
+	color: black;
+}
+.content-giaynu > ul > li:hover
+{
+	border: 2px solid green;
+}
+.spkhac > .content-tuivi
+{
+	margin-top: 25px;
+}
+.spkhac > .content-tuivi > ul
+{
+	margin:0px;
+	padding: 0px;
+	list-style: none;
+	margin-left: 40px;
+}
+.spkhac > .content-tuivi img{
+	width: 175px;
+	height: 175px;
+}
+.spkhac > .content-tuivi > ul >li
+{
+	display: inline-block;
+	border: 1px solid #7b3e4e;
+	padding: 10px;
+	margin-right: 13px;
+}
+.content-tuivi > ul > li .ten{
+	font-size: 12.5px;
+}
+.content-tuivi > ul > li .gia{
+	margin-left:20px;
+	color: green;
+	font-weight: bold;
+	font-size: 14px;
+	}
+.content-tuivi > ul > li .gia >b
+{
+	text-decoration: line-through;
+	color: black;
+	font-size: 12px;
+}
+.content-tuivi > ul > li .slban
+{
+	margin-left: 100px;
+	font-size: 11px;
+}
+.content-tuivi a
+{
+	text-decoration: none;
+	color: black;
+}
+.content-tuivi > ul > li:hover
+{
+	border: 2px solid green;
+}
+.footer-menu
+{
+	margin-top: 60px;
+}
+.footer-menu > .ft-2
+{
+	background: white;
+	height: 6px;
+	width: 1520px;
+}
+.footer-menu > .ft-content
+{
+	background: #142827;
+	height: 300px;
+	width: 1520px;
+	display: flex;
+	font-size: 16px;
+	color: #ecdada;
+	font-weight: bold;
+}
+
+ .ft-content > .ct1
+ {
+ 	margin-left: 200px;
+ 	width: 180px;
+ 	padding-top: 45px;
+ }
+ .ft-content > .ct2
+ {
+ 	margin-left: 30px;
+ 	width: 200px;
+ 	padding-top: 45px;
+ }
+ .ft-content > .ct3
+ {
+ 	margin-left: 30px;
+ 	padding-top: 45px;
+ }
+ .ft-content > .ct4
+ {
+ 	margin-left: 150px;
+ 	padding-top: 45px;
+ }
+ .ft-content i{
+ 	color: yellow;
+ 	font-weight: bold;
+ }
+  .ft-content > .ct1 >ul
+  {
+  	margin: 0px;
+  	padding: 0px;
+  	list-style: none;
+  	padding-top: 15px;
+  }
+  .ft-content > .ct1 >ul >li
+  {
+  	margin-top: 13px;
+  }
+    .ft-content > .ct1 >ul >li >a
+    {
+    	text-decoration: none;
+    	color: white;
+    	font-weight: initial;
+    	font-size: 13px;
+    }
+    .ft-content >.ct1 >ul >li a:hover
+    {
+      color: yellow;
+    }
+  .ft-content > .ct2 >ul
+  {
+  	margin: 0px;
+  	padding: 0px;
+  	list-style: none;
+  	padding-top: 15px;
+  }
+  .ft-content > .ct2 >ul >li
+  {
+  	margin-top: 10px;
+  }
+    .ft-content > .ct2 >ul >li >a
+    {
+    	text-decoration: none;
+    	color: white;
+    	font-weight: initial;
+    	font-size: 13px;
+    }
+    .ft-content >.ct2 >ul >li a:hover
+    {
+      color: yellow;
+    }
+.ft-content > .ct3 >ul
+  {
+  	margin: 0px;
+  	padding: 0px;
+  	list-style: none;
+  	padding-top: 15px;
+  }
+  .ft-content > .ct3 >ul >li
+  {
+  	margin-top: 12px;
+  }
+    .ft-content > .ct3 >ul >li >a
+    {
+    	text-decoration: none;
+    	color: white;
+    	font-weight: initial;
+    	font-size: 13px;
+    }
+    .ft-content >.ct3 >ul >li a:hover
+    {
+      color: yellow;
+    }   
+    .footer-menu > .ft-4
+{
+	background: black;
+	height: 30px;
+	width: 1520px;
+} 
+.footer-menu > .ft-4 > div
+{
+	margin-left: 500px;
+	padding-top: 7px;
+	color: white;
+	font-size: 13px;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 99;
+  border:1px solid pink;
+  outline: none;
+  background-color: green;
+  cursor: pointer;
+  padding: 6px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+

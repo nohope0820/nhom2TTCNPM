@@ -1,0 +1,402 @@
+body
+{
+  margin: auto;
+	font-size: 12px;
+	font-family: arial;
+	margin-top: 0px;
+	margin-left: 0px;
+	background: #e9edf3;
+  width: 1520px;
+}
+.login{
+	background: #eedbdb;
+	width: 1520px;
+	height: 30px;
+	display: flex;
+}
+.login > .login-icon1 > ul
+{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	padding-top: 3px;
+	margin-left: 150px;
+}
+.login > .login-icon1 > ul > li
+{
+	display: inline;
+	margin-right: 0px;
+}
+.login > .login-icon1 > ul > li > a
+{
+	font-size: 21px;
+	padding: 5px;
+}
+.login > .login-icon1 > ul > li > a:hover
+{
+	color: #a96a6a;
+
+}
+.login > .login-icon2 > ul
+{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	padding-top: 8px;
+	margin-left: 460px;
+}
+.login > .login-icon2 > ul > li
+{
+	display: inline;
+	margin-right: 50px;
+}
+.login a{
+	text-decoration: none;
+	color: black;
+}
+.login a:hover{
+	text-decoration: underline;
+	color: green;
+}
+.banner
+{
+	margin-top: 0px;
+	background: white;
+	width: 1520px;
+    height: 105px;
+    }
+ .banner > .logo
+ {
+ 	padding-top: 5px;
+ 	margin-left: 200px;
+ }
+ .box >.search{
+  overflow: hidden;
+  width: 500px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.banner > .box
+{
+	margin-left: 520px;
+	margin-top: -75px;
+}
+.box > .search input#search{
+  width: 500px;
+  height: 35px;
+  border: solid green;
+  background: white;
+  font-size: 13px;
+  float: left;
+  color: black;
+  padding-left: 15px;
+  border-radius: 5px;
+}
+.banner > .icon-search
+{
+margin-top: -35px;
+margin-left: 1025px;
+}
+button{
+	border: solid green;
+	background: green;
+	border-radius: 2px;
+}
+button > i{padding: 7px;}
+
+ .banner > .cart
+{
+margin-top: -33px;
+margin-left: 1170px;
+}
+ .banner > .cart >a
+ {
+ 	text-decoration: none;
+ 	color: black;
+ 	font-size: 15px;
+ 	font-family: times new roman;
+ 	padding: 5px;
+ }
+  .banner > .cart > a:hover
+  {
+  	color: #e86415;
+  }
+ .cart i{
+ 	vertical-align: middle;
+ }
+ .menu
+{
+	margin-top: 0px;
+	background: #1f4140;
+	width: 1520px;
+    height: 40px;
+ }
+ .menu > ul
+ {
+ 	margin: 0px;
+ 	padding: 0px;
+ 	list-style: none;
+ 	margin-left: 200px;
+ 	padding-top: 13px;
+ }
+ .menu > ul > li
+ {
+ 	display: inline;
+ 	border-right: 1px solid white;
+ }
+ .menu > ul > li:last-child
+ {
+ 		border-right-width:0px; 
+}
+ .menu > ul > li > a
+ {
+ 	padding: 15px;
+ 	text-decoration: none;
+ 	color: white;
+    font-size: 14px;
+    font-weight: bold;
+ }
+  .menu > ul > li > a:hover
+  {
+  	color: yellow;
+  }
+  .content{
+  	margin-top: 40px;
+  	margin-left: 220px;
+  	background: white;
+  	width: 1100px;
+  	height: 1200px;
+  }
+  .content > .name-ct
+  {
+  	padding-top: 30px;
+  	margin-left: 450px;
+  	font-size: 20px;
+  	font-weight: bold;
+  	color: #1f4140;
+  }
+   .content > hr
+   {
+   	height: 1.5px;
+   	width: 250px;
+   	margin-left: 420px;
+   	padding-top: -5px;
+   	background: green;
+   }
+ .content > iframe
+ {
+ 	margin-top:45px;
+ 	margin-left:50px; 
+ 	border: 0px; 
+ 	width: 1000px;
+ }
+ .content > .lienhe
+ {
+ 	display: flex;
+ 	margin-top: 35px;
+ 	height: 600px;
+ }
+ .content > .lienhe > .left
+ {
+ 	margin-left: 50px;
+ 	width: 700px;
+ }
+  .content > .lienhe > .left > b
+  {
+  	margin-left: 280px;
+  	font-size: 17px;
+  	color: #1f4140;
+  }
+  .content > .lienhe > .left > hr
+  {
+  	height: 1.2px;
+  	width: 150px;
+  	margin-left: 250px;
+  	background-color: green;
+  }
+
+  .content > .lienhe > .left > input
+  {
+  	margin-top: 45px;
+  	margin-right: 50px;
+  	width: 250px;
+  	padding: 12px;
+  }
+  .content > .lienhe > .left > textarea
+  {
+  	margin-top: 30px;
+  	width: 583px;
+  	padding: 10px;
+  }
+  .content > .lienhe > .left > div > input
+  {
+  	margin-top: 25px;
+  	margin-left: 550px;
+  	padding: 5px 10px;
+  	border-radius: 3px;
+  	border: 1px solid green;
+  }
+
+    .content > .lienhe > .right > b
+  {
+  	margin-left: 80px;
+  	font-size: 17px;
+  	color: #1f4140;
+  }
+  .content > .lienhe > .right > hr
+  {
+  	height: 1.2px;
+  	width: 200px;
+  	margin-left: 50px;
+  	background-color: green;
+  }
+   .content > .lienhe > .right > div
+   {
+   	margin-top: 60px;
+   	font-size: 15px;
+   	color: #1f4140
+   	font-weight: bold;
+
+   }
+   .footer-menu
+{
+	margin-top: 60px;
+}
+.footer-menu > .ft-2
+{
+	background: white;
+	height: 6px;
+	width: 1520px;
+}
+.footer-menu > .ft-content
+{
+	background: #142827;
+	height: 300px;
+	width: 1520px;
+	display: flex;
+	font-size: 16px;
+	color: #ecdada;
+	font-weight: bold;
+}
+
+ .ft-content > .ct1
+ {
+ 	margin-left: 200px;
+ 	width: 180px;
+ 	padding-top: 45px;
+ }
+ .ft-content > .ct2
+ {
+ 	margin-left: 30px;
+ 	width: 200px;
+ 	padding-top: 45px;
+ }
+ .ft-content > .ct3
+ {
+ 	margin-left: 30px;
+ 	padding-top: 45px;
+ }
+ .ft-content > .ct4
+ {
+ 	margin-left: 150px;
+ 	padding-top: 45px;
+ }
+ .ft-content i{
+ 	color: yellow;
+ 	font-weight: bold;
+ }
+  .ft-content > .ct1 >ul
+  {
+  	margin: 0px;
+  	padding: 0px;
+  	list-style: none;
+  	padding-top: 15px;
+  }
+  .ft-content > .ct1 >ul >li
+  {
+  	margin-top: 13px;
+  }
+    .ft-content > .ct1 >ul >li >a
+    {
+    	text-decoration: none;
+    	color: white;
+    	font-weight: initial;
+    	font-size: 13px;
+    }
+    .ft-content >.ct1 >ul >li a:hover
+    {
+      color: yellow;
+    }
+  .ft-content > .ct2 >ul
+  {
+  	margin: 0px;
+  	padding: 0px;
+  	list-style: none;
+  	padding-top: 15px;
+  }
+  .ft-content > .ct2 >ul >li
+  {
+  	margin-top: 10px;
+  }
+    .ft-content > .ct2 >ul >li >a
+    {
+    	text-decoration: none;
+    	color: white;
+    	font-weight: initial;
+    	font-size: 13px;
+    }
+    .ft-content >.ct2 >ul >li a:hover
+    {
+      color: yellow;
+    }
+.ft-content > .ct3 >ul
+  {
+  	margin: 0px;
+  	padding: 0px;
+  	list-style: none;
+  	padding-top: 15px;
+  }
+  .ft-content > .ct3 >ul >li
+  {
+  	margin-top: 12px;
+  }
+    .ft-content > .ct3 >ul >li >a
+    {
+    	text-decoration: none;
+    	color: white;
+    	font-weight: initial;
+    	font-size: 13px;
+    }
+    .ft-content >.ct3 >ul >li a:hover
+    {
+      color: yellow;
+    }   
+    .footer-menu > .ft-4
+{
+	background: black;
+	height: 30px;
+	width: 1520px;
+} 
+.footer-menu > .ft-4 > div
+{
+	margin-left: 500px;
+	padding-top: 7px;
+	color: white;
+	font-size: 13px;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 99;
+  border:1px solid pink;
+  outline: none;
+  background-color: green;
+  cursor: pointer;
+  padding: 6px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}

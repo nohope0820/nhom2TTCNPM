@@ -83,8 +83,15 @@
 <div class="chitietsp">
         <div class="tensp"><?php echo $record->name; ?></div>
         <div class="giasp">
+          <?php $price = $record->price;
+                $giamoi = $record->giamoi; ?>
+                <?php if($price != $giamoi): ?>
                 <div class="gia"><a><?php echo number_format($record->price); ?>đ </a><b> <?php echo number_format($record->giamoi); ?>đ </b><span> giảm <?php echo $record->discount; ?>%</span> 
                 </div>
+                <?php else: ?>
+                    <div class="gia" style="margin-left: 120px;"><b> <?php echo number_format($record->giamoi); ?>đ </b></div>
+                <?php endif; ?>
+
         </div>
 
         <div class="size" style="margin-top: -50px; margin-bottom: 35px;"><b>Size :</b>
@@ -228,12 +235,24 @@ $('input.input-qty').each(function() {
                 <ul id="sp">
          <?php $hotProducts = $this->modelHotProducts(); ?>
                <?php foreach ($hotProducts as $rows): ?>
-    <li><a href="index.php?controller=products&action=detail&id=<?php echo $rows->id;?>"><img src="../assets/upload/products/<?php echo $rows->photo;?>">
+     <li class="container" style="margin-right: 10px; border: linear-gradient(to left, #743ad5, #d53a9d);"><div class="image"><a href="index.php?controller=products&action=detail&id=<?php echo $rows->id;?>&star=5">
+        
+      <img src="../assets/upload/products/<?php echo $rows->photo;?>">
         <div class="ctsp">
       <div class="ten"><br><a href="index.php?controller=products&action=detail&id=<?php echo $rows->id;?>" style="text-decoration: none; color: black;" ><?php echo $rows->name; ?></a></div><br>
-      <div class="gia"><b><?php echo number_format($rows->price); ?>đ </b>&nbsp - &nbsp <?php echo number_format($rows->giamoi); ?>đ</div><br>
-      <div><a href="index.php?controller=products&action=detail&id=<?php echo $rows->id;?>" style="border: 1px solid green; border-radius: 10px; padding: 6px; text-decoration: none; color: white; background: green; margin-left: 47px;">Xem chi tiết</a></div>
-      </div>
+      <?php $price = $rows->price;
+                              $giamoi = $rows->giamoi; ?>
+                        <?php if($price != $giamoi): ?>
+                        <div class="gia" style="font-size: 15px; color: green"><b style="text-decoration:line-through; color: black; font-size: 12.5px;"><?php echo number_format($rows->price); ?>đ </b>&nbsp-&nbsp<?php echo number_format($rows->giamoi); ?>đ</div>
+                        <?php else: ?>
+                        <div class="gia" style="margin-left: 50px;font-size: 15px; color: green"><?php echo number_format($rows->giamoi); ?>đ</div>
+                        <?php endif; ?>
+                      </div></div>
+      <div class="readmore">
+            <div class="text"><a href="index.php?controller=products&action=detail&id=<?php echo $rows->id;?>&star=5"><i class="fa fa-eye"></i>Xem chi tiết</a></div>
+            </div>  
+     
+
     </a></li>
     <?php endforeach; ?>
 </ul>
@@ -264,6 +283,49 @@ function topFunction() {
 </script>
 
 <style type="text/css">
+  .container {
+  position: relative;
+
+ 
+}
+ 
+.image {
+  opacity: 1;
+  transition: .6s ease;
+  backface-visibility: hidden;
+  
+}
+ 
+.readmore {
+  transition: .6s ease;
+  opacity: 0;
+  position: absolute;
+  top: 45%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+ 
+.container:hover .image {
+  opacity: 0.1;
+ 
+}
+ 
+.container:hover .readmore {
+  opacity: 1;
+}
+ 
+.text {
+ background: linear-gradient(to right, red, purple);
+ border-radius: 10px; 
+  color: white;
+  font-size: 12px;
+  padding: 10px 8px;
+  font-weight: bold;
+}
+.text > a:hover{color: yellow; text-decoration: underline;}
+
         .content
  {
         background: white;

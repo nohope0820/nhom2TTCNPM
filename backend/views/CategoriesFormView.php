@@ -1,13 +1,21 @@
 <!-- load file layout chung -->
+<?php 
+          $id = $_SESSION["id"];
+          $check = $this->modelCheck($id);
+         ?>
+<?php if ($check == 0): {
+    header("location:index.php?controller=users&action=error&message=noRight");
+} ?>
+<?php else:  ?>
 <?php $this->layoutPath = "Layout.php"; ?>
 <div class="col-md-12">  	
     <div class="panel panel-primary" style="border-color: green;">
-        <div class="panel-heading" style="background-color: gray;">Add edit category</div>
+        <div class="panel-heading" style="background-color: gray;">Thêm - Chỉnh sửa thông tin danh mục</div>
         <div class="panel-body">
         <form method="post" enctype="multipart/form-data" action="<?php echo $action; ?>">
             <!-- rows -->
             <div class="row" style="margin-top:5px;">
-                <div class="col-md-2">Name</div>
+                <div class="col-md-2">Tên danh mục</div>
                 <div class="col-md-10">
                     <input type="text" value="<?php echo isset($record->name) ? $record->name:''; ?>" name="name" class="form-control" required>
                 </div>
@@ -15,7 +23,7 @@
             <!-- end rows -->
              <!-- rows -->
             <div class="row" style="margin-top:5px;">
-                <div class="col-md-2">Description</div>
+                <div class="col-md-2">Mô tả</div>
                 <div class="col-md-10">
                     <textarea name="description"><?php echo isset($record->description) ? $record->description:''; ?></textarea>
                     <script type="text/javascript">
@@ -43,7 +51,7 @@
            
             <!-- rows -->
             <div class="row" style="margin-top:5px;">
-                <div class="col-md-2">Photo</div>
+                <div class="col-md-2">Ảnh</div>
                 <div class="col-md-10">
                     <input type="file" name="photo">
                 </div>
@@ -63,7 +71,7 @@
             <div class="row" style="margin-top:5px;">
                 <div class="col-md-2"></div>
                 <div class="col-md-10">
-                    <input type="submit" value="Process" class="btn btn-primary" style="border-color: green; background-color: green;">
+                    <input type="submit" value="Xử lý" class="btn btn-primary" style="border-color: green; background-color: green;">
                 </div>
             </div>
             <!-- end rows -->
@@ -71,3 +79,4 @@
         </div>
     </div>
 </div>
+<?php endif; ?>

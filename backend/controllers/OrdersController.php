@@ -36,5 +36,10 @@
 			//load view
 			$this->loadView("OrderDetailView.php",["data"=>$data,"id"=>$id]);
 		}
+		public function checkOut(){
+			$id = $_SESSION["id"];
+			//goi ham cartAdd tu model de them phan tu vao session array
+			$checkOut = $this->modelCheckOut($id);
+			}
 	}
  ?>

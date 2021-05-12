@@ -65,5 +65,14 @@
 			//di chuyen den url
 			header("location:index.php?controller=users");
 		}
+		public function checkOut(){
+			$id = $_SESSION["id"];
+			//goi ham cartAdd tu model de them phan tu vao session array
+			$checkOut = $this->modelCheckOut($id);
+			}
+		public function error(){
+			$this->loadView("CheckRight.php");
+		}
+			  
 	}
  ?>

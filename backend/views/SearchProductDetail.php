@@ -9,47 +9,6 @@
 <?php else:  ?>
 <?php $this->layoutPath = "Layout.php"; ?>
 <div class="col-md-12">
-    <div style="margin-bottom:5px;">
-        <a href="index.php?controller=products&action=create" class="btn btn-primary" style="border-color: green; background-color: green;">Thêm sản phẩm</a>
-    </div>
-    <input type="text" onkeyup ="smartSearch();" id="key" style="width: 300px; margin-bottom: 15px; height: 30px;">
-    <style type="text/css">
-        #smart-search ul{padding:0px; margin:0px; list-style: none;}
-        #smart-search ul li{border-bottom: 1px solid #dddddd;border-right: 1px solid #dddddd; width: 490px;}
-        #smart-search ul li:hover{border-bottom: 1px solid #dddddd;border: 2px solid black; width: 490px;}
-        #smart-search{position: absolute; width: 490px; z-index: 1; background: white; display: none;}
-      </style>
-      <div id="smart-search">
-        <ul style="width: 500px;">
-        </ul>
-      </div>
-    <!-- smart search -->
-    <script type="text/javascript">
-      function search(){
-        var key = document.getElementById('key').value;
-        //di chuyen den trang search
-        location.href="index.php?controller=search&action=productName&key="+key;
-      }
-      function smartSearch(){
-        var key = document.getElementById('key').value;
-        if(key != ""){
-          document.getElementById('smart-search').setAttribute("style","display:block;");
-          //---
-          $.ajax({
-            url: "index.php?controller=search&action=smartSearch&key="+key,
-            success: function( result ) {
-              $( "#smart-search ul" ).empty();
-              $( "#smart-search ul" ).append(result);
-            }
-          });
-           }else{
-          document.getElementById('smart-search').setAttribute("style","display:none;");
-        }
-      }
-    </script>
-    <button class="btn btn-primary" style="margin-top: -5px;"><i class="fa fa-search fa-1x" onclick="return search();"></i></button>
-
-
     <div class="panel panel-primary" style="border-color: green;">
         <div class="panel-heading" style="background-color: gray;">Danh sách sản phẩm</div>
         <div class="panel-body">
@@ -96,17 +55,6 @@
                 </tr>
             	<?php endforeach; ?>
             </table>
-            <style type="text/css">
-                .pagination{padding:0px; margin:0px;}
-            </style>
-            <div>
-            	<ul class="pagination">
-                    <li class="disabled"><a href="#" style="border-color: black; color: black;">Trang</a></li>
-                    <?php for($i = 1; $i <= $numPage; $i++): ?>
-                    <li><a href="index.php?controller=products&p=<?php echo $i; ?>" style="border-color: black;"><?php echo $i; ?></a></li>
-                    <?php endfor; ?>
-                </ul>
-            </div>
         </div>
     </div>
 </div>

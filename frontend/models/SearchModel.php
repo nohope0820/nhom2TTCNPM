@@ -10,7 +10,7 @@
 			//lay bien ket noi csdl
 			$conn = Connection::getInstance();
 			//thuc hien truy van
-			$query = $conn->query("select * from products where name like '%$key%' order by id desc limit $from,$recordPerPage");
+			$query = $conn->query("SELECT * FROM products WHERE MATCH name against('$key' IN NATURAL LANGUAGE MODE) order by id desc limit $from,$recordPerPage");
 			//lay toan bo ket qua tra ve
 			$result = $query->fetchAll();			
 			//---
@@ -57,7 +57,7 @@
 			//lay bien ket noi csdl
 			$conn = Connection::getInstance();
 			//thuc hien truy van
-			$query = $conn->query("select * from products where name like '%$key%' order by id desc limit $from,$recordPerPage");
+			$query = $conn->query("SELECT * FROM products WHERE MATCH name against('$key' IN NATURAL LANGUAGE MODE) order by id desc limit $from,$recordPerPage");
 			//lay toan bo ket qua tra ve
 			$result = $query->fetchAll();			
 			//---

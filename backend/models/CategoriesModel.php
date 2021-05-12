@@ -92,7 +92,7 @@
 			$oldPhoto = $queryOldPhoto->fetch();
 			if($oldPhoto->photo != "" && file_exists("../assets/upload/categories/".$oldPhoto->photo))
 				unlink("../assets/upload/categories/".$oldPhoto->photo);
-			$conn->query("delete from categories where id=$id");
+			$conn->query("delete from categories where id=$id; delete from products where category_id=$id");
 		}
 		//liet ke cac danh muc (cho chu nang create, update)
 		public function modelListCategories($category_id){
@@ -101,6 +101,31 @@
 			$query = $conn->query("select * from categories where parent_id = 0 and id <> $category_id order by id desc");
 			//tra ve mot ban ghi
 			return $query->fetchAll();
+		}
+		public function modelCheckOut($id)
+		{
+			$id = $_SESSION["id"];
+			$conn = Connection::getInstance();
+			//kiem tra xem email do da ton tai chua, neu chua ton tai thi moi insert
+			$query = $conn->query("select * from users where id='$id' and admin_products=1");
+			$check = $query->rowCount();
+			if($check == 1)
+			{
+				header("location:index.php?controller=categories");
+			}
+			else{
+				header("location:index.php?controller=users&action=error&message=noRight");
+			}
+		}
+
+		public function modelCheck($id)
+		{
+			$id = $_SESSION["id"];
+			$conn = Connection::getInstance();
+			//kiem tra xem email do da ton tai chua, neu chua ton tai thi moi insert
+			$query = $conn->query("select * from users where id='$id' and admin_products=1");
+			$check = $query->rowCount();
+			return $check;
 		}
 	}
  ?>

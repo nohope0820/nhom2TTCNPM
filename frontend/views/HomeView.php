@@ -78,24 +78,48 @@
     <ul class="menu1">
        <?php $hotProducts = $this->modelHotProducts1(); ?>
                <?php foreach ($hotProducts as $rows): ?>
-    <li style="margin-right: 10px;"><a href="index.php?controller=products&action=detail&id=<?php echo $rows->id;?>&star=5"><img src="../assets/upload/products/<?php echo $rows->photo;?>">
+    <li class="container" style="margin-right: 10px; border: linear-gradient(to left, #743ad5, #d53a9d);"><div class="image"><a href="index.php?controller=products&action=detail&id=<?php echo $rows->id;?>&star=5">
+        
+      <img src="../assets/upload/products/<?php echo $rows->photo;?>">
         <div class="ctsp">
       <div class="ten"><br><a href="index.php?controller=products&action=detail&id=<?php echo $rows->id;?>" style="text-decoration: none; color: black;" ><?php echo $rows->name; ?></a></div><br>
-      <div class="gia"><b><?php echo number_format($rows->price); ?>đ </b>&nbsp - &nbsp <?php echo number_format($rows->giamoi); ?>đ</div><br>
-      <div class="cart"><a href="index.php?controller=products&action=detail&id=<?php echo $rows->id;?>" style="border: 1px solid green; border-radius: 10px; padding: 6px; text-decoration: none; color: white; background: green; margin-left: 47px;">Xem chi tiết</a></div>
-      </div>
+      <?php $price = $rows->price;
+                              $giamoi = $rows->giamoi; ?>
+                        <?php if($price != $giamoi): ?>
+                        <div class="gia"><b><?php echo number_format($rows->price); ?>đ </b>&nbsp-&nbsp<?php echo number_format($rows->giamoi); ?>đ</div>
+                        <?php else: ?>
+                        <div class="gia" style="margin-left: 50px;"><?php echo number_format($rows->giamoi); ?>đ</div>
+                        <?php endif; ?>
+                      </div></div>
+      <div class="readmore">
+            <div class="text"><a href="index.php?controller=products&action=detail&id=<?php echo $rows->id;?>&star=5"><i class="fa fa-eye"></i>Xem chi tiết</a></div>
+            </div>  
+     
+
     </a></li>
     <?php endforeach; ?>
   </ul>
     <ul class="menu2">
        <?php $hotProducts = $this->modelHotProducts2(); ?>
                <?php foreach ($hotProducts as $rows): ?>
-     <li style="margin-right: 10px;"><a href="index.php?controller=products&action=detail&id=<?php echo $rows->id;?>&star=5"><img src="../assets/upload/products/<?php echo $rows->photo;?>">
+     <li class="container" style="margin-right: 10px; border: linear-gradient(to left, #743ad5, #d53a9d);"><div class="image"><a href="index.php?controller=products&action=detail&id=<?php echo $rows->id;?>&star=5">
+        
+      <img src="../assets/upload/products/<?php echo $rows->photo;?>">
         <div class="ctsp">
       <div class="ten"><br><a href="index.php?controller=products&action=detail&id=<?php echo $rows->id;?>" style="text-decoration: none; color: black;" ><?php echo $rows->name; ?></a></div><br>
-      <div class="gia"><b><?php echo number_format($rows->price); ?>đ </b>&nbsp - <?php echo number_format($rows->giamoi); ?>đ</div><br>
-      <div><a href="index.php?controller=products&action=detail&id=<?php echo $rows->id;?>" style="border: 1px solid green; border-radius: 10px; padding: 6px; text-decoration: none; color: white; background: green; margin-left: 47px;">Xem chi tiết</a></div>
-      </div>
+      <?php $price = $rows->price;
+                              $giamoi = $rows->giamoi; ?>
+                        <?php if($price != $giamoi): ?>
+                        <div class="gia"><b><?php echo number_format($rows->price); ?>đ </b>&nbsp-&nbsp<?php echo number_format($rows->giamoi); ?>đ</div>
+                        <?php else: ?>
+                        <div class="gia" style="margin-left: 60px;"><?php echo number_format($rows->giamoi); ?>đ</div>
+                        <?php endif; ?>
+      </div></div>
+      <div class="readmore">
+            <div class="text"><a href="index.php?controller=products&action=detail&id=<?php echo $rows->id;?>&star=5"><i class="fa fa-eye"></i>Xem chi tiết</a></div>
+            </div>  
+     
+
     </a></li>
     <?php endforeach; ?>
   </ul>
@@ -192,8 +216,13 @@
                  <img src="../assets/upload/products/<?php echo $rows->photo;?>">
                         <div class="ctsp">
                         <div class="ten"><br><a href="index.php?controller=products&action=detail&id=<?php echo $rows->id; ?>"><?php echo $rows->name; ?></a></div><br>
-                        <div class="gia"><b><?php echo number_format($rows->price); ?>đ </b>&nbsp-&nbsp<?php echo number_format($rows->giamoi); ?>đ</div><br>
-                        
+                        <?php $price = $rows->price;
+                              $giamoi = $rows->giamoi; ?>
+                        <?php if($price != $giamoi): ?>
+                        <div class="gia"><b><?php echo number_format($rows->price); ?>đ </b>&nbsp-&nbsp<?php echo number_format($rows->giamoi); ?>đ</div>
+                        <?php else: ?>
+                        <div class="gia" style="margin-left: 60px;"><?php echo number_format($rows->giamoi); ?>đ</div>
+                        <?php endif; ?>
                
            
                        </div>
@@ -222,9 +251,6 @@
  
 .image {
   opacity: 1;
- 
- 
- 
   transition: .6s ease;
   backface-visibility: hidden;
   
@@ -254,7 +280,7 @@
  background: linear-gradient(to right, red, purple);
  border-radius: 10px; 
   color: white;
-  font-size: 13px;
+  font-size: 12px;
   padding: 10px 8px;
   font-weight: bold;
 }

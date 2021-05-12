@@ -37,9 +37,13 @@
 			//--
 			$name = $_POST["name"];
 			$password = $_POST["password"];
+			$manager = isset($_POST["manager"]) ? 1 : 0;
+			$admin_products = isset($_POST["admin_products"]) ? 1 : 0;
+			$admin_news = isset($_POST["admin_news"]) ? 1 : 0;
+			$admin_orders = isset($_POST["admin_orders"]) ? 1 : 0;
 			//lay bien ket noi
 			$conn = Connection::getInstance();
-			$conn->query("update users set name='$name' where id=$id");
+			$conn->query("update users set name='$name', manager='$manager', admin_products='$admin_products', admin_news='$admin_news', admin_orders='$admin_orders' where id=$id");
 			//neu password khong rong thi update password
 			if($password != ""){
 				//ma hoa password
@@ -53,6 +57,10 @@
 			$name = $_POST["name"];
 			$email = $_POST["email"];
 			$password = $_POST["password"];
+			$manager = isset($_POST["manager"]) ? 1 : 0;
+			$admin_products = isset($_POST["admin_products"]) ? 1 : 0;
+			$admin_news = isset($_POST["admin_news"]) ? 1 : 0;
+			$admin_orders = isset($_POST["admin_orders"]) ? 1 : 0;
 			//ma hoa password
 			$password = md5($password);
 			//lay bien ket noi
@@ -61,7 +69,7 @@
 			$query = $conn->query("select id from users where email='$email'");
 			$check = $query->rowCount();
 			if($check == 0){
-				$conn->query("insert into users set name='$name',email='$email',password='$password'");
+				$conn->query("insert into users set name='$name',email='$email',password='$password', manager='$manager', admin_products='$admin_products', admin_news='$admin_news', admin_orders='$admin_orders'");
 				return true;
 			}
 			else
@@ -72,6 +80,31 @@
 			//lay bien ket noi
 			$conn = Connection::getInstance();
 			$conn->query("delete from users where id=$id");
+		}
+		public function modelCheckOut($id)
+		{
+			$id = $_SESSION["id"];
+			$conn = Connection::getInstance();
+			//kiem tra xem email do da ton tai chua, neu chua ton tai thi moi insert
+			$query = $conn->query("select * from users where id='$id' and manager=1");
+			$check = $query->rowCount();
+			if($check == 1)
+			{
+				header("location:index.php?controller=users");
+			}
+			else{
+				header("location:index.php?controller=users&action=error&message=noRight");
+			}
+		}
+
+		public function modelCheck($id)
+		{
+			$id = $_SESSION["id"];
+			$conn = Connection::getInstance();
+			//kiem tra xem email do da ton tai chua, neu chua ton tai thi moi insert
+			$query = $conn->query("select * from users where id='$id' and manager=1");
+			$check = $query->rowCount();
+			return $check;
 		}
 	}
  ?>

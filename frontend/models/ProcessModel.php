@@ -100,6 +100,7 @@
 
     public function modelRating($id, $star){
       $customer_id = $_SESSION["customer_id"];
+      $customer_name = $_SESSION["customer_name"];
       $id=$_GET["id"];
       //insert ban ghi vao table rating
       //lay bien ket noi

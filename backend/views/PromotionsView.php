@@ -1,4 +1,12 @@
 <!-- load file layout chung -->
+<?php 
+          $id = $_SESSION["id"];
+          $check = $this->modelCheck($id);
+         ?>
+<?php if ($check == 0): {
+    header("location:index.php?controller=users&action=error&message=noRight");
+} ?>
+<?php else:  ?>
 <?php $this->layoutPath = "Layout.php"; ?>
 <div class="col-md-12">
     <div style="margin-bottom:5px;">
@@ -42,3 +50,4 @@
         </div>
     </div>
 </div>
+<?php endif; ?>

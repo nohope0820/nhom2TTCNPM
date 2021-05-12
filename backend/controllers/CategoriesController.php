@@ -50,11 +50,9 @@
 		//create ban ghi - trang thai POST
 		public function createPost(){
 			//goi ham tu model de create du lieu
-			if($this->modelCreate())
+			$this->modelCreate();
 				//di chuyen den url
 				header("location:index.php?controller=categories");
-			else
-				header("location:index.php?controller=categories&action=create&notify=emailExists");
 		}
 		//xoa ban ghi
 		public function delete(){
@@ -65,5 +63,10 @@
 			//di chuyen den url
 			header("location:index.php?controller=categories");
 		}
+		public function checkOut(){
+			$id = $_SESSION["id"];
+			//goi ham cartAdd tu model de them phan tu vao session array
+			$checkOut = $this->modelCheckOut($id);
+			}
 	}
  ?>

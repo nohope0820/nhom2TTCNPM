@@ -73,5 +73,30 @@
 			return $query->fetchAll();
 			//---
 		}
+		public function modelCheckOut($id)
+		{
+			$id = $_SESSION["id"];
+			$conn = Connection::getInstance();
+			//kiem tra xem email do da ton tai chua, neu chua ton tai thi moi insert
+			$query = $conn->query("select * from users where id='$id' and admin_orders=1");
+			$check = $query->rowCount();
+			if($check == 1)
+			{
+				header("location:index.php?controller=orders");
+			}
+			else{
+				header("location:index.php?controller=users&action=error&message=noRight");
+			}
+		}
+		public function modelCheck($id)
+		{
+			$id = $_SESSION["id"];
+			$conn = Connection::getInstance();
+			//kiem tra xem email do da ton tai chua, neu chua ton tai thi moi insert
+			$query = $conn->query("select * from users where id='$id' and admin_orders=1");
+			$check = $query->rowCount();
+			return $check;
+		}
+
 	}
  ?>

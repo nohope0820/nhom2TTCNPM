@@ -2,7 +2,7 @@
 	//connection
 	class Connection{
 		public static function getInstance(){
-			$conn = new PDO("mysql:hostname=localhost;dbname=php49_flash_store","root","");
+			$conn = new PDO("mysql:hostname=localhost;dbname=test_demo","root","");
 			//lay du lieu theo kieu unicode
 			$conn->exec("set names utf8");
 			//mac dinh duyet ban ghi theo kieu object

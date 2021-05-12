@@ -67,7 +67,7 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="../assets/backend/layout1/img/nohope.jpg" class="img-circle" alt="Avatar"> <span>NO_HOPE</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><?php echo $_SESSION['name']; ?>(ID: <?php echo $_SESSION['id']; ?>)</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#"><i class="lnr lnr-user"></i> <span>Thông tin của tôi</span></a></li>
                                 <li><a href="#"><i class="lnr lnr-envelope"></i> <span>Tin nhắn</span></a></li>
@@ -89,20 +89,20 @@
                         <li><a href="index.php" class=""><i class="lnr lnr-home"></i> <span>Bảng điều khiển</span></a></li>
 
                         
-                        <li><a href="index.php?controller=news" class=""><i class="lnr lnr-alarm"></i> <span>Tin tức</span></a></li>
+                        <li><a href="index.php?controller=news&action=checkOut" class=""><i class="lnr lnr-alarm"></i> <span>Tin tức</span></a></li>
 
 
-                        <li class="click"><a href="index.php?controller=categories" class=""><i class="lnr lnr-chart-bars"></i> <span>Danh mục sản phẩm</span></a></li>
+                        <li class="click"><a href="index.php?controller=categories&action=checkOut" class=""><i class="lnr lnr-chart-bars"></i> <span>Danh mục sản phẩm</span></a></li>
 
-                        <li class="click"><a href="index.php?controller=products" class=""><i class="lnr lnr-chart-bars"></i> <span>Danh sách sản phẩm</span></a></li>
-                         <li class="click"><a href="index.php?controller=promotions" class=""><i class="lnr lnr-chart-bars"></i> <span>Banner quảng cáo</span></a></li>
+                        <li class="click"><a href="index.php?controller=products&action=checkOut" class=""><i class="lnr lnr-chart-bars"></i> <span>Danh sách sản phẩm</span></a></li>
+                         <li class="click"><a href="index.php?controller=promotions&action=checkOut" class=""><i class="lnr lnr-chart-bars"></i> <span>Banner quảng cáo</span></a></li>
                         <li>
-                    <a href="index.php?controller=orders">
+                    <a href="index.php?controller=orders&action=checkOut">
                         <i class="lnr lnr-chart-bars"></i> <span>Đơn hàng</span>
                     </a>
                 </li>
 
-                         <li class="click"><a href="index.php?controller=users" class=""><i class="lnr lnr-code"></i> <span>Quản lý người dùng</span></a></li>
+                         <li class="click"><a href="index.php?controller=users&action=checkOut" class=""><i class="lnr lnr-code"></i> <span>Quản lý người dùng</span></a></li>
 
                         <li>
                             <a href="#" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Trang</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>

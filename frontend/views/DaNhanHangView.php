@@ -1,4 +1,7 @@
 <?php $this->layoutPath = "LayoutTrangTrong.php"; ?>
+<style type="text/css">
+.a{padding: 5px 10px; background: blue; margin-top: 15px; margin-bottom: 15px; border-radius: 10px;}
+</style>
 <div style="background: url(../assets/frontend/images/banner1.jpg)no-repeat;
 background-attachment: fixed;
     background-position: center;

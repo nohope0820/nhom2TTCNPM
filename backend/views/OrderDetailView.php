@@ -1,18 +1,27 @@
 <!-- load file layout chung -->
+<?php 
+          $id = $_SESSION["id"];
+          $check = $this->modelCheck($id);
+         ?>
+<?php if ($check == 0): {
+    header("location:index.php?controller=users&action=error&message=noRight");
+} ?>
+<?php else:  ?>
 <?php $this->layoutPath = "Layout.php"; ?>
 <div class="col-md-12">
     <div style="margin-bottom:5px;">
-        <input onclick="history.go(-1);" type="button" value="Back" class="btn btn-danger" style="background-color: green;">
+        <input onclick="history.go(-1);" type="button" value="Quay lại" class="btn btn-danger" style="background-color: green;">
     </div>    
     <div class="panel panel-primary">
-        <div class="panel-heading" style="background-color: gray;">Orders detail</div>
+        <div class="panel-heading" style="background-color: gray;">Chi tiết đơn hàng</div>
         <div class="panel-body">
             <!-- thong tin don hang -->
-            <?php 
-                $order = $this->modelGetOrders($id);
+            <?php
+                $order_id = $_GET["id"];
+                $order = $this->modelGetOrders($order_id);
                 $customer = $this->modelGetCustomers($order->customer_id);
              ?>
-            <table class="table">
+            <table class="table" style=" color: black;">
                 <tr>
                     <th style="width: 100px;">Họ tên</th>
                     <td><?php echo $customer->fullname; ?></td>
@@ -72,3 +81,4 @@
         </div>
     </div>
 </div>
+<?php endif; ?>

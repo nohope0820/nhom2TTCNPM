@@ -1,14 +1,22 @@
 <!-- load file layout chung -->
+<?php 
+          $id = $_SESSION["id"];
+          $check = $this->modelCheck($id);
+         ?>
+<?php if ($check == 0): {
+    header("location:index.php?controller=users&action=error&message=noRight");
+} ?>
+<?php else:  ?>
 <?php $this->layoutPath = "Layout.php"; ?>
 <div class="col-md-12">  	
     <div class="panel panel-primary" style="border-color: green;">
-        <div class="panel-heading" style="background-color: gray;">Add edit products</div>
+        <div class="panel-heading" style="background-color: gray;">Thêm - Chỉnh sửa thông tin sản phẩm</div>
         <div class="panel-body">
             <!-- muon upload duoc file thi phai co thuoc tinh enctype="multipart/form-data" -->
         <form method="post" enctype="multipart/form-data" action="<?php echo $action; ?>">
             <!-- rows -->
             <div class="row" style="margin-top:10px;">
-                <div class="col-md-2" style="color: black;">Name</div>
+                <div class="col-md-2" style="color: black;">Tên sản phẩm</div>
                 <div class="col-md-10">
                     <input type="text" style="border-color: green;" value="<?php echo isset($record->name) ? $record->name:''; ?>" name="name" class="form-control" required>
                 </div>
@@ -16,17 +24,9 @@
             <!-- end rows -->
             <!-- rows -->
             <div class="row" style="margin-top:15px;">
-                <div class="col-md-2" style="color: black;">Giá</div>
+                <div class="col-md-2" style="color: black;">Giá cũ</div>
                 <div class="col-md-10">
                     <input type="number" style="border-color: green;" value="<?php echo isset($record->price) ? $record->price:''; ?>" min="0" step="0.01" name="price" class="form-control" required>
-                </div>
-            </div>
-            <!-- end rows -->
-            <!-- rows -->
-            <div class="row" style="margin-top:15px;">
-                <div class="col-md-2" style="color: black;">New_price</div>
-                <div class="col-md-10">
-                    <input type="number" style="border-color: green;" value="<?php echo isset($record->giamoi) ? $record->giamoi:''; ?>" name="giamoi" class="form-control" min="0" required>
                 </div>
             </div>
             <!-- end rows -->
@@ -61,7 +61,7 @@
             <!-- end rows -->
             <!-- rows -->
             <div class="row" style="margin-top:15px;">
-                <div class="col-md-2" style="color: black;">Description</div>
+                <div class="col-md-2" style="color: black;">Mô tả</div>
                 <div class="col-md-10">
                     <textarea name="description"><?php echo isset($record->description) ? $record->description:''; ?></textarea>
                     <script type="text/javascript">
@@ -72,7 +72,7 @@
             <!-- end rows -->  
             <!-- rows -->
             <div class="row" style="margin-top:5px;">
-                <div class="col-md-2" style="color: black;">Content</div>
+                <div class="col-md-2" style="color: black;">Nội dung</div>
                 <div class="col-md-10">
                     <textarea name="content"><?php echo isset($record->content) ? $record->content:''; ?></textarea>
                      <script type="text/javascript">
@@ -250,3 +250,4 @@
         </div>
     </div>
 </div>
+<?php endif; ?>

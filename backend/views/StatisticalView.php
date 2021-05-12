@@ -13,10 +13,18 @@
         <div style="color: black; font-size: 17px; text-decoration: underline;">Thống kê hóa đơn sản phẩm</div>
         <div style=" color: black; font-size: 15px; margin-top: 15px; margin-bottom: 15px;">
             <form method="post" enctype="multipart/form-data" action="index.php?controller=statistical&action=detail">
-        Từ <input type="date" name="start"> đến <input type="date" name="finish"> <input type="submit" value="Thống kê">
+        Từ <input type="date" name="start" value="<?php echo $date_start ?>"> đến <input type="date" name="finish" value="<?php echo $date_finish ?>"> <input type="submit" value="Thống kê">
          </form></div>
     <div class="panel panel-primary" style="border-color: green;">
-        <div class="panel-heading" style="background-color: gray;">Danh sách đơn hàng</div>
+        <div class="panel-heading" style="background-color: gray;">Danh sách đơn hàng  
+        			( từ 
+        				<?php 
+                        $date = Date_create($date_start);
+                        echo Date_format($date, "d/m/Y"); ?> 
+                      đến 
+                      	<?php 
+                        $date = Date_create($date_finish);
+                        echo Date_format($date, "d/m/Y"); ?> )</div>
         <div class="panel-body">
             <table class="table table-bordered table-hover" style="color: black; border: 2px solid green; margin-top: 10px; ">
                 <tr style="font-weight: bold;border: 2px solid green;">
@@ -28,7 +36,7 @@
                     <th style="width:150px; text-align: center;">Trạng thái</th>
                     <th style="width:150px;">Chức năng</th>
                 </tr>
-                <?php foreach($listRecord as $rows): ?>
+                <?php foreach($data as $rows): ?>
                 <?php   
                     //lay ban ghi customer
                   $customer = $this->modelGetCustomers($rows->customer_id);
@@ -81,4 +89,7 @@
         </div>
     </div>
 </div>
+<?php foreach ($revenue as $rows): ?>
+<div style="color: black; font-size: 18px; font-weight: bold;"><b style="text-decoration: underline;">Tổng doanh thu</b> : <?php echo number_format($rows->doanhthu) ?>đ</div>
+<?php endforeach ?>
 <?php endif; ?>

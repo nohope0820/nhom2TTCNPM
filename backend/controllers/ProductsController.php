@@ -62,5 +62,10 @@
 			//di chuyen den url
 			header("location:index.php?controller=products");
 		}
+		public function checkOut(){
+			$id = $_SESSION["id"];
+			//goi ham cartAdd tu model de them phan tu vao session array
+			$checkOut = $this->modelCheckOut($id);
+			}
 	}
  ?>

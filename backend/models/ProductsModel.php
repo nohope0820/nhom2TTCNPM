@@ -44,8 +44,9 @@
 			$size4 = $_POST["size4"];
 			$size5 = $_POST["size5"];
 			$price = $_POST["price"];
-			$giamoi = $_POST["giamoi"];
 			$discount = $_POST["discount"];
+			$newprice = ($price -($price*($discount/100)));
+			$giamoi = round($newprice, -3);
 			$category_id = $_POST["category_id"];
 			//lay bien ket noi
 			$conn = Connection::getInstance();
@@ -161,8 +162,9 @@
 			$size4 = $_POST["size4"];
 			$size5 = $_POST["size5"];
 			$price = $_POST["price"];
-			$giamoi = $_POST["giamoi"];
 			$discount = $_POST["discount"];
+			$newprice = ($price -($price*($discount/100)));
+			$giamoi = round($newprice, -3);
 			$category_id = $_POST["category_id"];
 			//kiem tra xem user co chon anh de upload khong, neu co thi xoa anh cu, upload anh moi
 			if($_FILES["photo"]["name"] != ""){				
@@ -277,6 +279,30 @@
 			$query = $conn->query("select * from categories where parent_id = $category_id order by id desc");
 			$result = $query->fetchAll();
 			return $result;
+		}
+		public function modelCheckOut($id)
+		{
+			$id = $_SESSION["id"];
+			$conn = Connection::getInstance();
+			//kiem tra xem email do da ton tai chua, neu chua ton tai thi moi insert
+			$query = $conn->query("select * from users where id='$id' and admin_products=1");
+			$check = $query->rowCount();
+			if($check == 1)
+			{
+				header("location:index.php?controller=products");
+			}
+			else{
+				header("location:index.php?controller=users&action=error&message=noRight");
+			}
+		}
+		public function modelCheck($id)
+		{
+			$id = $_SESSION["id"];
+			$conn = Connection::getInstance();
+			//kiem tra xem email do da ton tai chua, neu chua ton tai thi moi insert
+			$query = $conn->query("select * from users where id='$id' and admin_products=1");
+			$check = $query->rowCount();
+			return $check;
 		}
 	}
  ?>
